@@ -20,6 +20,7 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 COPY ../backend ./
 
-RUN chown -R www-data storage bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 9000
