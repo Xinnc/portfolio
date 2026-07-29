@@ -3,6 +3,7 @@ import api from './axios';
 export const auth = {
     login: (credentials) => api.post('/login', credentials),
     logout: () => api.get('/logout'),
+    info: () => api.get('/info'),
 }
 
 export const reviews = {

@@ -4,11 +4,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/info', function () {
-    phpinfo();
-});
+
 
 //доступно всем
 Route::post('/review', [ReviewController::class, 'store']);
@@ -20,6 +19,14 @@ Route::get('/settings', [UserController::class, 'settings']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/info', function () {
+        $user = auth()->user();
+        $bool = false;
+        if ($user->role == 'admin') {
+            $bool = true;
+        }
+        return $bool;
+    });
     Route::get('/logout', [UserController::class, 'logout']);
     //отзывы
     Route::patch('/review/{review}', [ReviewController::class, 'update']);

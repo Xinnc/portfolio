@@ -12,7 +12,6 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 const logout = async () => {
-  console.log('logout')
   await authStore.logout()
   router.push('/login')
 }

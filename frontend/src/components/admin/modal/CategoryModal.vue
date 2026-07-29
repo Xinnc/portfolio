@@ -29,7 +29,6 @@ const coverPreview = ref(null)
 
 const handleFile = (e) => {
   const file = e.target.files[0]
-  console.log(file)
   if (!file) return
 
   form.value.cover_image = file
@@ -39,7 +38,6 @@ const handleFile = (e) => {
   }
 
   coverPreview.value = URL.createObjectURL(file)
-  console.log(coverPreview.value)
 }
 
 const save = async () => {
