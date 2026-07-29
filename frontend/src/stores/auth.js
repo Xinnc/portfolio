@@ -8,7 +8,7 @@ export const useAuthStore = defineStore('auth', () => {
     const user = ref(null)
     const isAuthenticated = computed(() => !!token.value)
     const isAdmin = ref(false)
-    const login = async (credentials) => {
+    const checkLogin = async (credentials) => {
         try {
             const response = await auth.info()
             isAdmin.value = response.data
@@ -21,9 +21,10 @@ export const useAuthStore = defineStore('auth', () => {
         }
     }
 
-    const checkLogin = async () => {
-        const response = await auth.info()
-        checkToken.value = response.data
+    const login = async (credentials) => {
+        const response = await auth.login(credentials)
+        token.value = response.data.token
+        localStorage.setItem('token', token.value)
         return response
     }
 
