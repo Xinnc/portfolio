@@ -289,6 +289,7 @@ const close = () => {
   display: flex;
   flex-direction: column;
   gap: 22px;
+  overflow-y: auto;
 }
 
 .input-group {
@@ -427,5 +428,4 @@ const close = () => {
   }
 
 }
-
 </style>

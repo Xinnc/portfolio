@@ -9,21 +9,22 @@
       <h2>ОБО МНЕ</h2>
     </div>
     <div class="about_images">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
+      <img src="@/assets/images/valeria_photo1.JPG" alt="Валерия">
+      <img src="@/assets/images/vcaleria_photo2.JPG" alt="Валерия">
+      <img src="@/assets/images/valeria_photo3.JPG" alt="Валерия">
     </div>
     <div class="about_description">
+      <p>Снимаю видео, которые хочется пересматривать. 
+Я работаю с визуальным контентом: фотографией, видео и созданием креативных концепций. Как фотограф, видеограф, оператор и контент-продюсер, я помогаю превращать идеи в проекты, которые цепляют и остаются в памяти. Для меня важны не только красивая картинка, но и смысл, атмосфера и внимание к деталям. Беру на себя весь процесс - от идеи и съемки до финального результата, чтобы каждый проект выглядел цельным и работал именно так, как должен.</p>
       <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
-      <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
-      <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
+      <p>Я работаю с изображениями, чтобы рассказывать истории.</p> 
       <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
     </div>
     <div class="about_diploma">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
-      <img src="@/assets/images/sneaky_vampire.gif" alt="alt">
+      <img src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
+      <img src="@/assets/images/diplom2.JPG" alt="Диплом специалиста">
+      <img src="@/assets/images/diplom3.JPG" alt="Диплом специалиста">
+      <img src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
     </div>
   </div>
 </section>
