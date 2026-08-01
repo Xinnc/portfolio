@@ -27,8 +27,8 @@ class StoreProjectData extends data
         #[Required, StringType, Min(3), Max(255)]
         public string $title,
 
-        #[Required, StringType, Min(10), Max(2000)]
-        public string $description,
+        #[Nullable, StringType, Min(10), Max(2000)]
+        public ?string $description,
 
         #[Required, Date]
         public string $project_date,

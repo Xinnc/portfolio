@@ -116,15 +116,31 @@ onMounted(async () => {
 }
 
 .settings_link img {
-  max-width: 50px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
   filter: brightness(0) saturate(100%) invert(1);
 }
 
 .settings_link {
   display: flex;
   gap: 20px;
+  align-items: center;
+  min-width: 200px;
+  max-width: 320px;
 }
-
+.settings_link p{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contact_text {
+  flex: 1;
+  min-width: 0;
+}
 .settings_update {
   display: flex;
   flex-wrap: wrap;
@@ -134,7 +150,7 @@ onMounted(async () => {
 .settings_overlay {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px 40px;
 }
 
 .settings_btn {

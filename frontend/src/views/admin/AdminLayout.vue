@@ -99,6 +99,10 @@ const closeMenu = () => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
 }
 .sidebar-header h2 {
   font-size: 22px;

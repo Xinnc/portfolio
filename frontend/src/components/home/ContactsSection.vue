@@ -25,21 +25,24 @@ onMounted(() => {
               <img src="@/assets/icons/telegram-2.svg" alt="icon">
               <div class="contact_text">
                 <h4>Telegram</h4>
-                <p>{{settingItems.telegram}}</p>
+                <p>Valeria</p>
+<!--                <p>{{settingItems.telegram}}</p>-->
               </div>
             </a>
             <a class="contact_item" :href="`https://vk.com/${settingItems.vk}`" target="_blank">
               <img src="@/assets/icons/vk-5.svg" alt="icon">
               <div class="contact_text">
                 <h4>VK</h4>
-                <p>{{settingItems.vk}}</p>
+                <p>Valeria</p>
+<!--                <p>{{settingItems.vk}}</p>-->
               </div>
             </a>
             <a class="contact_item" :href="`https://max.ru/u/${settingItems.max}`" target="_blank">
               <img src="@/assets/icons/Max_logo_black.svg" alt="icon">
               <div class="contact_text">
                 <h4>Max</h4>
-                <p>{{settingItems.max}}</p>
+                <p>Valeria</p>
+<!--                <p>{{settingItems.max}}</p>-->
               </div>
             </a>
           </div>
@@ -49,14 +52,16 @@ onMounted(() => {
               <img src="@/assets/icons/whatsapp-12.svg" alt="icon">
               <div class="contact_text">
                 <h4>Whatsapp*</h4>
-                <p>{{settingItems.whatsapp}}</p>
+                <p>Valeria-Kravcova</p>
+<!--                <p>{{settingItems.whatsapp}}</p>-->
               </div>
             </a>
             <a class="contact_item" :href="`https://instagram.com/${settingItems.instagram}`" target="_blank">
               <img src="@/assets/icons/instagram-53.svg" alt="icon">
               <div class="contact_text">
                 <h4>Instagram*</h4>
-                <p>{{settingItems.instagram}}</p>
+                <p>Valeria-Kravcova</p>
+<!--                <p>{{settingItems.instagram}}</p>-->
               </div>
             </a>
             <p class="meta">*Meta — признана экстремистской организацией, её деятельность запрещена на территории Российской Федерации.</p>

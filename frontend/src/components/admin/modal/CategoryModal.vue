@@ -82,8 +82,12 @@ const resetForm = () => {
   coverPreview.value = null
 }
 
-const close = () => {
+const cancel = () => {
   resetForm()
+  emit('close')
+}
+
+const close = () => {
   emit('close')
 }
 
@@ -123,7 +127,7 @@ const close = () => {
           </div>
 
           <div class="input-group">
-            <label>Обложка</label>
+            <label class="input-label">Обложка</label>
             <label class="cover-upload">
               <input hidden type="file" accept="image/*" @change="handleFile" />
               <template v-if="coverPreview">
@@ -149,7 +153,7 @@ const close = () => {
 
         <div class="modal_footer">
 
-          <button class="cancel" @click="close"> Отмена</button>
+          <button class="cancel" @click="cancel"> Отмена</button>
 
           <button
               class="save"
@@ -166,9 +170,10 @@ const close = () => {
 
 <style scoped>
 .cover-upload{
+  max-width: 320px;
+  min-width: 260px;
+  height: 500px;
 
-  width:100%;
-  height:200px;
 
   border:2px dashed #333;
   border-radius:10px;
@@ -212,15 +217,6 @@ const close = () => {
 .cover-placeholder span{
 
   font-size:15px;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: .25s;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 
 .modal {
@@ -303,7 +299,12 @@ const close = () => {
   flex-direction: column;
   gap: 8px;
 }
-
+.input-group:last-child {
+  align-items: center;
+}
+.input-label{
+  align-items: start;
+}
 .input-group label {
   color: #888;
 }
