@@ -122,27 +122,29 @@ const save = async () => {
 }
 
 .modal{
-  width:min(700px,95vw);
+  width: 100%;
+  max-width: 700px;
 
-  background:#111;
+  max-height: 90vh;
 
-  border:1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
 
-  border-radius:12px;
-
-  overflow:hidden;
-
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .modal-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  padding:22px 28px;
+  padding: 20px 24px;
 
-  border-bottom:1px solid #222;
+  border-bottom: 1px solid #222;
 }
 
 .modal-header h2{
@@ -168,11 +170,15 @@ const save = async () => {
 }
 
 .modal-body{
-  padding:30px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 
-  display:flex;
-  flex-direction:column;
-  gap:22px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .input-group{
@@ -216,13 +222,14 @@ const save = async () => {
 }
 
 .modal-footer{
-  display:flex;
-  justify-content:flex-end;
-  gap:14px;
+  padding: 20px 24px;
+  flex-shrink: 0;
+  border-top: 1px solid #222;
 
-  padding:24px 30px;
+  display: flex;
+  justify-content: flex-end;
 
-  border-top:1px solid #222;
+  gap: 15px;
 }
 
 .modal-footer button{
@@ -245,6 +252,9 @@ const save = async () => {
   background:#252525;
 }
 
+.save {
+  color: white;
+}
 .save:hover{
   background:#14532d;
   border-color:#16a34a;
@@ -262,6 +272,11 @@ const save = async () => {
   border-radius: 8px;
 
   color: #ffbdbd;
+}
+@media(max-width: 900px){
+  .modal{
+    max-height: 70vh;
+  }
 }
 
 @media(max-width:700px){

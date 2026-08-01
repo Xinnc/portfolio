@@ -1,5 +1,21 @@
 <script setup>
+import {ref} from "vue";
+import ImageModalDipl from "@/components/additional/ImageModalDipl.vue";
+import diplom1 from '@/assets/images/diplom1.JPG';
+import diplom2 from '@/assets/images/diplom2.JPG';
+import diplom3 from '@/assets/images/diplom3.JPG';
 
+const modal = ref({
+  isOpen: false,
+  image: '',
+})
+const openImage = (image) => {
+  modal.value.image = image
+  modal.value.isOpen = true
+}
+const closeImage = () => {
+  modal.value.isOpen = false
+}
 </script>
 
 <template>
@@ -10,21 +26,19 @@
     </div>
     <div class="about_images">
       <img src="@/assets/images/valeria_photo1.JPG" alt="Валерия">
-      <img src="@/assets/images/vcaleria_photo2.JPG" alt="Валерия">
       <img src="@/assets/images/valeria_photo3.JPG" alt="Валерия">
+      <img src="@/assets/images/vcaleria_photo2.JPG" alt="Валерия">
     </div>
     <div class="about_description">
-      <p>Снимаю видео, которые хочется пересматривать. 
-Я работаю с визуальным контентом: фотографией, видео и созданием креативных концепций. Как фотограф, видеограф, оператор и контент-продюсер, я помогаю превращать идеи в проекты, которые цепляют и остаются в памяти. Для меня важны не только красивая картинка, но и смысл, атмосфера и внимание к деталям. Беру на себя весь процесс - от идеи и съемки до финального результата, чтобы каждый проект выглядел цельным и работал именно так, как должен.</p>
-      <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
-      <p>Я работаю с изображениями, чтобы рассказывать истории.</p> 
-      <p>Я работаю с изображениями, чтобы рассказывать истории.</p>
+      <p>Снимаю видео, которые хочется пересматривать.</p>
+      <p>Я работаю с визуальным контентом: фотографией, видео и созданием креативных концепций. Как фотограф, видеограф, оператор и контент-продюсер, я помогаю превращать идеи в проекты, которые цепляют и остаются в памяти. Для меня важны не только красивая картинка, но и смысл, атмосфера и внимание к деталям. Беру на себя весь процесс — от идеи и съемки до финального результата, чтобы каждый проект выглядел цельным и работал именно так, как должен.</p>
     </div>
     <div class="about_diploma">
-      <img src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
-      <img src="@/assets/images/diplom2.JPG" alt="Диплом специалиста">
-      <img src="@/assets/images/diplom3.JPG" alt="Диплом специалиста">
-      <img src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
+      <ImageModalDipl :image="modal.image" :is-open="modal.isOpen" @close="closeImage"/>
+      <img @click="openImage(diplom1)" src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
+      <img @click="openImage(diplom2)" src="@/assets/images/diplom2.JPG" alt="Диплом специалиста">
+      <img @click="openImage(diplom3)" src="@/assets/images/diplom3.JPG" alt="Диплом специалиста">
+      <img @click="openImage(diplom1)" src="@/assets/images/diplom1.JPG" alt="Диплом специалиста">
     </div>
   </div>
 </section>
@@ -60,10 +74,17 @@
 .about_images{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: end;
   gap: 20px;
 }
-.about_images img{
+.about_images img:nth-child(2) {
   width: 100%;
+  opacity: 1;
+}
+.about_images img{
+  opacity: 0.7;
+  width: 80%;
   aspect-ratio: 3/5;
   object-fit: cover;
   border: 1px solid var(--border);
@@ -73,6 +94,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: justify;
   gap: 10px;
   font-size:24px;
   line-height:1.2;
@@ -91,7 +113,6 @@
   }
 }
 
-/* Планшеты */
 @media (max-width: 768px) {
   .about {
     padding: 30px 0;
@@ -116,6 +137,7 @@
   }
   .about_images img:first-child,
   .about_images img:nth-child(2) {
+    width: 100%;
     aspect-ratio: 4/5;
   }
   .about_images img {

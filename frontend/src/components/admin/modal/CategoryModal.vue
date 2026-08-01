@@ -168,7 +168,7 @@ const close = () => {
 .cover-upload{
 
   width:100%;
-  height:220px;
+  height:200px;
 
   border:2px dashed #333;
   border-radius:10px;
@@ -242,16 +242,19 @@ const close = () => {
   width: 100%;
   max-width: 700px;
 
+  max-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+
   background: #111;
-
   border: 1px solid #222;
-
   border-radius: 12px;
-
   overflow: hidden;
 }
 
 .modal_header {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -284,12 +287,15 @@ const close = () => {
 }
 
 .modal_body {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+
   padding: 24px;
 
   display: flex;
   flex-direction: column;
   gap: 22px;
-  overflow-y: auto;
 }
 
 .input-group {
@@ -335,7 +341,7 @@ const close = () => {
 .modal_footer {
 
   padding: 20px 24px;
-
+  flex-shrink: 0;
   border-top: 1px solid #222;
 
   display: flex;
@@ -408,7 +414,6 @@ const close = () => {
 @media (max-width: 700px) {
 
   .modal_window {
-
     max-width: 100%;
   }
 
