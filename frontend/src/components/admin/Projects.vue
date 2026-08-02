@@ -1,6 +1,6 @@
 <script setup>
 import {useProjects} from "@/composables/useProjects.js";
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 import ProjectModal from "@/components/admin/modal/ProjectModal.vue";
 import ConfirmModal from "@/components/admin/modal/ConfrimModal.vue";
 
@@ -57,9 +57,15 @@ const reloadProjects = async () => {
   await fetchProjects(props.category.slug)
 }
 
-onMounted(() => {
-  fetchProjects(props.category.slug)
-})
+watch(
+    () => props.category?.slug,
+    (newSlug, oldSlug) => {
+      if (newSlug && newSlug !== oldSlug) {
+        fetchProjects(newSlug)
+      }
+    },
+    {immediate: true}
+)
 
 const emit = defineEmits([
   'open-projects',

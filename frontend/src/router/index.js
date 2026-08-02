@@ -32,7 +32,7 @@ router.beforeEach(async (to, from, next) => {
         if (!authStore.token) return next("/login")
         const ok = await authStore.checkLogin()
         if (!ok) return next("/login")
-        if (to.meta.requiresAdmin && !authStore.isAdmin) return next("/")
+        if (to.meta.requiresAdmin && !authStore.isAdmin) return next("/login")
     }
     next()
 })
