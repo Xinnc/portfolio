@@ -188,6 +188,7 @@ const modules = [Navigation, Pagination, Autoplay]
 .category_text {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .category_text h3 {
   font-size: 42px;
